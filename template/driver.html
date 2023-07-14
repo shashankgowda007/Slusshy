@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Swift Ride </h1>
+
+    <form action="driver" method="post">
+        {% csrf_token %}
+        <h4>Enter your SRN: </h4>
+        <input type="text" name="srn1" placeholder="Rider SRN"><br>
+
+
+        <h4>Enter your SRN: </h4>
+        <input type="text" name="srn2" placeholder="passenger SRN"><br>
+        <button type="submit">Click here to SUBMIT </button>
+    </form>
+    {% for i in map %}
+    <h1>{{ i }}</h1>
+    {% endfor %}
+
+    <h1>{{ objdata }}</h1>
+
+</body>
+
+</html>

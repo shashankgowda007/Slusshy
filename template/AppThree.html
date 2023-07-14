@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="post" style="padding: 5%;">
+        {% csrf_token %}
+        <table border="2" style="padding: 5%;">
+            <tr>
+                <td colspan="2">
+                    <center>
+                        <h1>Swift Ride</h1>
+                    </center>
+                </td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+
+            <tr>
+                <td>Name :</td>
+                <td><input type="text" name="name" id="name" required></td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+
+            <tr>
+                <td>SRN :</td>
+                <td><input type="text" name="srn" id="srn" required></td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+                <td>AGE :</td>
+                <td><input type="text" name="age" id="age" required></td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+
+
+            <tr>
+                <td>COLLEGE :</td>
+                <td><input type="text" name="college" id="college" required></td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+
+
+            <tr>
+                <td>CITY :</td>
+                <td><input type="text" name="city" id="city" required></td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+                <td><a href="view" target="_blank"> REST API</a><br></td>
+                <td><a href="http://127.0.0.1:8000/admin/appthree/appthree/" target="_blank"> DJANGO ADMIN </a></td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+
+
+            <tr>
+                <td colspan="2">
+                    <center><input type="submit"></center>
+                </td>
+            <tr></tr>
+            <tr></tr>
+
+            </tr>
+        </table>
+
+        <table>
+            {% for i in list %}
+            <tr>
+                <th>{{ i }}</th>
+            </tr>
+
+            {% endfor %}
+        </table>
+
+        CRUD - operations <br>
+
+        <a href="view" target="_blank"> url_for_view </a><br>
+
+
+
+    </form>
+
+
+
+
+</body>
+
+</html>

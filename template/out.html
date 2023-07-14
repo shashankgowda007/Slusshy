@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <title>Document</title>
+    <style>
+        .fa-star {
+            color: grey;
+            cursor: pointer;
+        }
+
+        .fa-star.checked {
+            color: gold;
+        }
+    </style>
+</head>
+
+
+
+
+<body>
+
+
+    <div id="starRating">
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+    </div>
+
+    <h1>Rating : {{ rate }}</h1>
+    <h4>Feedback : {{ feedback }}</h4>
+    <hr>
+
+    <table border="2">
+        <tr>
+            <th> Best Rider </th>
+        </tr>
+
+
+        {% for i in d %}
+        <tr>
+
+            <td>
+                <center>{{ i }}</center>
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <hr>
+    <h5>Average Ratings : {{ AR }}</h5>
+    {% for i in TR %}
+    <h3>{{ i.rateing }}</h3>
+    <h3>{{ i.feedback }}</h3>
+
+    {% endfor %}
+
+    <h1>form feedback {{ AVG }}</h1>
+
+    <script>
+        var rating = {{ AR }};
+        var starRating = document.getElementById('starRating');
+
+        function generateStarRating(rating) {
+            var stars = starRating.querySelectorAll('.fa-star');
+            var roundedRating = Math.round(rating * 2) / 2; // Round rating to nearest 0.5
+            var integerPart = Math.floor(roundedRating);
+            var decimalPart = roundedRating - integerPart;
+
+            stars.forEach((star, index) => {
+                if (index < integerPart) {
+                    star.classList.add('checked');
+                } else if (index === integerPart && decimalPart >= 0.25) {
+                    star.classList.add('checked');
+                }
+            });
+        }
+
+        generateStarRating(rating);
+    </script>
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <form action="input" method="post">
+        {% csrf_token %}
+        Enter your Name : <input type="text" name="name" placeholder="Enter your name"> <br>
+        Enter your feedback about swift ride : <br><textarea name="feedback" id="" cols="20" rows="10"
+            placeholder="Type here........."></textarea><br>
+        Rate the app out of 5 : <input type="number" name="rateing" placeholder="eg: 4.5" step=0.01 min=0 max=5><br>
+        <input type="submit" /><br>
+        <hr>
+    </form><br>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1> Upload File</h1>
+        <!-- <input type="file" name="image1"><br> -->
+        <input type="file" name="image2"><br>
+        <!-- Add more file input fields for image3 to image10 -->
+        <button type="submit">Upload</button>
+    </form>
+    <a href="login">Login Page</a>
+    <p> </p>
+    <a href="signup">Signup</a><br>
+    <a href="fun"> AppThree {{ list1 }}</a><br>
+    <a href="restfull">Click here to get rating data</a><br>
+    <a href="R1">click here for signup data</a>
+
+
+
+
+</body>
+
+</html>
